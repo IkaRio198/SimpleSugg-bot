@@ -12,8 +12,10 @@ client.on('ready', () => {
 
     client.on("message", message => {
         if(message.content.startsWith(";help")) {
+    if(message.member.hasPermission("ADMINISTRATOR")){
             message.author.send("Bienvenue sur la section help du bot SimpleSugg'bot :\n\n;channel <channel id> → Définit le salon où les suggestions apparaitront\n\n;sugg <suggestion> → Proposer une idée\n\n;confirm <suggestion> → Confirme une suggestion (:warning: Vous devez supprimer automatiquement le message des votes !)\n\n;refuse <suggestion> → Refuse une suggestion (:warning: Vous devez supprimer automatiquement le message des votes !)")
         }
+	}
     })
 
 client.on("message", message => {
